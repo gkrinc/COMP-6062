@@ -1,0 +1,29 @@
+html {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+  padding-top: 24px;
+}
+
+h1 {
+  text-align: center;
+  color: #666;
+}
+
+p {
+  text-align: center;
+  color: #933;
+}
+
+a {
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #933;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #511;
+}
