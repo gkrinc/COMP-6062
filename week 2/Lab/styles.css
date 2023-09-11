@@ -1,0 +1,11 @@
+header, footer {
+  padding: 16px 32px; /* 2 top/bottom right/left */
+  background-color: #ddd;
+  text-align: center;
+}
+
+a {
+  background-color: #00f;
+  color: #fff;
+  padding: 0 12px;
+}

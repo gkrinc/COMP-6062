@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+}
+
+header, footer {
+  padding: 16px 32px; /* 2 top/bottom right/left */
+  background-color: #ddd;
+  text-align: center;
+}
+
+form {
+  padding: 8px;
+}
+
+a {
+  background-color: #00f;
+  color: #fff;
+  padding: 0 12px;
+}
+
+.mb-8 {
+  margin-bottom: 8px;
+}
