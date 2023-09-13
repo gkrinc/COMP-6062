@@ -8,6 +8,14 @@ header, footer {
   text-align: center;
 }
 
+section {
+  padding: 16px;
+}
+
+fieldset {
+  display: inline-block;
+}
+
 form {
   padding: 8px;
 }
@@ -20,4 +28,8 @@ a {
 
 .mb-8 {
   margin-bottom: 8px;
+}
+
+.mb-16 {
+  margin-bottom: 16px;
 }
