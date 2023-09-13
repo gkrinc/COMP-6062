@@ -16,6 +16,12 @@ fieldset {
   display: inline-block;
 }
 
+legend {
+  background-color: #000;
+  color: #fff;
+  padding: 3px 6px;
+}
+
 form {
   padding: 8px;
 }
@@ -32,4 +38,38 @@ a {
 
 .mb-16 {
   margin-bottom: 16px;
+}
+
+.menu a {
+  background-color: rgb(160, 160, 255);
+  padding: 0 12px;
+  color: #000;
+}
+
+.menu a:hover {
+  background-color: rgb(36, 36, 95);
+  color: #fff;
+}
+
+.base-container {
+  padding: 40px;
+}
+
+.base {
+  background-color: rgb(167, 255, 167);
+  width: 400px;
+  height: 400px;
+}
+
+.bad-box {
+  margin: 20px;
+  width: 100%;
+  border: 4px solid red;
+  height: 100px;
+}
+
+.good-box {
+  margin: 20px;
+  border: 4px solid blue;
+  height: 100px;
 }
