@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+}
+
+header, footer {
+  padding: 16px 32px; /* 2 top/bottom right/left */
+  background-color: #ddd;
+  text-align: center;
+}
+
+p {
+  padding: 8px;
+  margin: 8px;
+  background-color: rgb(168, 203, 255);
+}
+
+#specific-paragraph {
+  background-color: rgb(152, 255, 178);
+}
+
+.red-paragraph {
+  background-color: red;
+}
