@@ -116,7 +116,7 @@ null === undefined; // false
 
 // If foo() returns false, then
 // bar() doesn't get called
-if (foo() || bar()) {}
+if (foo() && bar()) {}
 
 
 
