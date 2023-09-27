@@ -100,6 +100,8 @@ const sphereSliderRadius = document.getElementById('sphere-radius');
 const sphereLabelRadius = document.querySelector('[for="sphere-radius"]'); // query by attribute
 const sphereInputVolume = document.getElementById('sphere-volume');
 
+// The second parameter of addEventListener is a function. This can either be a named function
+// or in this case an "anonymous function"
 sphereSliderRadius.addEventListener('input', (event) => {
   const radius = Number(event.target.value);
   updateSphereVolume(radius);
@@ -124,6 +126,7 @@ updateSphereVolume(Number(sphereSliderRadius.value));
 
 
 const btn = document.getElementById('btn');
+
 document.getElementsByName('btn-class').forEach((radio) => {
     radio.addEventListener('input', (event) => {
       const value = event.target.value;
@@ -131,4 +134,41 @@ document.getElementsByName('btn-class').forEach((radio) => {
       btn.className = `btn ${value}`;
       btn.setAttribute('disabled', value === 'btn-disabled');
   });
+});
+
+btn.addEventListener('click', () => {
+  // Is this particular instance, we don't really care about
+  // the `event` parameter because we know which button was clicked
+  // and don't need anything from the button
+  alert('The button was clicked');
+});
+
+btn.addEventListener('keypress', (event) => {
+  console.log(`The '${event.key}' key was pressed`);
+});
+
+
+
+
+// ----------------------------------------------------------------
+
+
+
+
+function genericClickHandlerWithThis() {
+  // 'data' attributes are a nice way to add additional context
+  // to an element without causing strange side-effect by using 
+  // non-standard attributes or hacks
+  console.log(this.dataset.testvalue);
+};
+
+const genericClickHandlerWithoutThis = (event) => {
+  console.log(event.target.dataset.testvalue);
+};
+
+// Note how we include the dot on .generic-btn with the querySelectorAll method
+// because it's generic we need to be more specific with our query
+document.querySelectorAll('.generic-btn').forEach((genericBtn) => {
+  genericBtn.addEventListener('click', genericClickHandlerWithThis);
+  genericBtn.addEventListener('click', genericClickHandlerWithoutThis);
 });
