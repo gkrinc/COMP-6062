@@ -1,3 +1,29 @@
+/*
+The window variable is always in scope so we can access it’s properties with or without
+prefixing them with the variable name window.
+
+console.log();
+same as
+window.console.log();
+
+*/
+
+console.log('Log level message');
+console.info('Info level message');
+console.debug('Debug level message');
+console.warn('Warn level message');
+console.error('Error level message');
+
+
+
+
+
+// ----------------------------------------------------------------
+
+
+
+
+
 /**
  * Calculates the area of a triangle
  * @param {Number} base
@@ -6,27 +32,41 @@
  */
 const areaTriangle = (base, height) => (base * height / 2);
 
-const triangleInputBase = document.getElementById('triangle-base');
+// Notice how we don't include the `#`? The function is searching by element id so the `#` would be redundant
+const triangleInputBase = document.getElementById('triangle-base'); // returns an Element object
 const triangleInputHeight = document.getElementById('triangle-height');
 const triangleInputArea = document.getElementById('triangle-area');
 
-triangleInputBase.addEventListener('change', (event) => {
+// The `input` event fires when the value of an <input>, <select>, or <textarea> element has been changed
+// as a direct result of a user action (such as typing in a textbox or checking a checkbox).
+triangleInputBase.addEventListener('input', (event) => {
+  // The `value` from the event target is always a string even though we set the type on the input to `number`
   const base = Number(event.target.value);
   const height = Number(triangleInputHeight.value);
   const area = areaTriangle(base, height);
   
+  // Set the value of the input
   triangleInputArea.value = area.toFixed(1);
 });
 
-triangleInputHeight.addEventListener('change', (event) => {
+triangleInputHeight.addEventListener('input', (event) => {
   const height = Number(event.target.value);
   const base = Number(triangleInputBase.value);
   const area = areaTriangle(base, height);
 
+  // Set the value of the input
   triangleInputArea.value = area.toFixed(1);
 });
 
+
+
+
+
 // ----------------------------------------------------------------
+
+
+
+
 
 /**
  * Calculates the volume of a sphere
@@ -52,3 +92,22 @@ const updateSphereVolume = (radius) => {
 };
 
 updateSphereVolume(Number(sphereSliderRadius.value));
+
+
+
+
+
+// ----------------------------------------------------------------
+
+
+
+
+const btn = document.getElementById('btn');
+document.getElementsByName('btn-class').forEach((radio) => {
+    radio.addEventListener('input', (event) => {
+      const value = event.target.value;
+
+      btn.className = `btn ${value}`;
+      btn.setAttribute('disabled', value === 'btn-disabled');
+  });
+});

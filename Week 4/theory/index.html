@@ -8,18 +8,38 @@
       <fieldset>
         <legend>Area of a Triangle</legend>
         <label for="triangle-base">Base</label>
-        <input id="triangle-base" name="triangle-base" type="number" />
+        <input id="triangle-base" name="triangle-base" type="number" class="input-sm" />
         <label for="triangle-height">Height</label>
-        <input id="triangle-height" name="triangle-height" type="number" />
+        <input id="triangle-height" name="triangle-height" type="number" class="input-sm" />
         <label for="triangle-area">Area</label>
-        <input id="triangle-area" name="triangle-area" type="number" disabled />
+        <input id="triangle-area" name="triangle-area" type="number" class="input-sm" disabled />
       </fieldset>
       <fieldset>
         <legend>Volume of a Sphere</legend>
         <label for="sphere-radius">Radius (1)</label>
         <input type="range" id="sphere-radius" name="sphere-radius" min="1" max="10" value="5" step="0.1" />
         <label for="sphere-volume">Volume</label>
-        <input id="sphere-volume" name="sphere-volume" type="number" disabled />
+        <input id="sphere-volume" name="sphere-volume" type="number" class="input-sm" disabled />
+      </fieldset>
+      <fieldset>
+        <legend>Setting classes and other attributes</legend>
+        <div class="mb-4">
+          <input id="btn-red" name="btn-class" type="radio" value="btn-red" checked />
+          <label for="btn-red">Red</label>
+        </div>
+        <div class="mb-4">
+          <input id="btn-green" name="btn-class" value="btn-green" type="radio" />
+          <label for="btn-green">Green</label>
+        </div>
+        <div class="mb-4">
+          <input id="btn-blue" name="btn-class" type="radio" value="btn-blue" />
+          <label for="btn-blue">Blue</label>
+        </div>
+        <div class="mb-12">
+          <input id="btn-disabled" name="btn-class" type="radio" value="btn-disabled" />
+          <label for="btn-disabled">Disabled</label>
+        </div>
+        <button id="btn" class="btn btn-red">Button</button>
       </fieldset>
     </form>
     <script src="script.js"></script>

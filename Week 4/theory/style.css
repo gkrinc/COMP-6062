@@ -2,6 +2,44 @@ fieldset {
   margin-bottom: 24px;
 }
 
+.input-sm {
+  width: 60px;
+}
+
 #sphere-radius {
   width: 300px;
+}
+
+.mb-4 {
+  margin-bottom: 4px;
+}
+
+.mb-12 {
+  margin-bottom: 12px;
+}
+
+.btn {
+  padding: 6px 12px;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-red {
+  background-color: rgb(212, 27, 27);
+  color: rgb(255, 255, 255);
+}
+
+.btn-green {
+  background-color: rgb(57, 131, 57);
+  color: rgb(255, 255, 255);
+}
+
+.btn-blue {
+  background-color: rgb(35, 91, 196);
+  color: rgb(255, 255, 255);
+}
+
+.btn-disabled {
+  cursor: not-allowed;
 }
