@@ -14,6 +14,14 @@ console.debug('Debug level message');
 console.warn('Warn level message');
 console.error('Error level message');
 
+const course = {
+  name: 'COMP-6062',
+  year: 2023,
+  semester: 'Fall',
+};
+console.log(course);
+console.log({course});
+console.log('Course: ', course.name, course.year, course.semester);
 
 
 
@@ -68,7 +76,7 @@ triangleInputHeight.addEventListener('input', (event) => {
 
 
 
-
+// Template literals example
 console.log('COMP' + '-' + 6062);
 console.log('COMP'.concat('-', 6062));
 const programCode = 'COMP';
