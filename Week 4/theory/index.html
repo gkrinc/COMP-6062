@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <form id="math-stuff" method="POST" action="">
+      <fieldset>
+        <legend>Area of a Triangle</legend>
+        <label for="triangle-base">Base</label>
+        <input id="triangle-base" name="triangle-base" type="number" />
+        <label for="triangle-height">Height</label>
+        <input id="triangle-height" name="triangle-height" type="number" />
+        <label for="triangle-area">Area</label>
+        <input id="triangle-area" name="triangle-area" type="number" disabled />
+      </fieldset>
+      <fieldset>
+        <legend>Volume of a Sphere</legend>
+        <label for="sphere-radius">Radius (1)</label>
+        <input type="range" id="sphere-radius" name="sphere-radius" min="1" max="10" value="5" step="0.1" />
+        <label for="sphere-volume">Volume</label>
+        <input id="sphere-volume" name="sphere-volume" type="number" disabled />
+      </fieldset>
+    </form>
+    <script src="script.js"></script>
+  </body>
+</html>
