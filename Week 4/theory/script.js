@@ -105,7 +105,7 @@ console.log(`Area = ${areaTriangle(5, 7)}`);
 const volumeSphere = radius => 4/3*Math.PI*radius**3;
 
 const sphereSliderRadius = document.getElementById('sphere-radius');
-const sphereLabelRadius = document.querySelector('[for="sphere-radius"]'); // query by attribute
+const sphereLabelRadius = document.querySelector('[for="sphere-radius"]'); // CSS syntax for selector(query) by attribute
 const sphereInputVolume = document.getElementById('sphere-volume');
 
 // The second parameter of addEventListener is a function. This can either be a named function
