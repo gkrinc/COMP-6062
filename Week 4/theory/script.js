@@ -24,6 +24,7 @@ console.error('Error level message');
 
 
 
+
 /**
  * Calculates the area of a triangle
  * @param {Number} base
@@ -57,6 +58,26 @@ triangleInputHeight.addEventListener('input', (event) => {
   // Set the value of the input
   triangleInputArea.value = area.toFixed(1);
 });
+
+
+
+
+
+// ----------------------------------------------------------------
+
+
+
+
+
+console.log('COMP' + '-' + 6062);
+console.log('COMP'.concat('-', 6062));
+const programCode = 'COMP';
+const programNumber = 6062;
+console.log(`${programCode}-${programNumber}`);
+console.log(`This is a
+multiline
+string`);
+console.log(`Area = ${areaTriangle(5, 7)}`);
 
 
 

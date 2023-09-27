@@ -2,6 +2,10 @@ fieldset {
   margin-bottom: 24px;
 }
 
+.d-none {
+  display: none;
+}
+
 .input-sm {
   width: 60px;
 }
