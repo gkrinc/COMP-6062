@@ -108,6 +108,8 @@ const sphereSliderRadius = document.getElementById('sphere-radius');
 const sphereLabelRadius = document.querySelector('[for="sphere-radius"]'); // CSS syntax for selector(query) by attribute
 const sphereInputVolume = document.getElementById('sphere-volume');
 
+console.log(sphereSliderRadius.outerHTML);
+
 // The second parameter of addEventListener is a function. This can either be a named function
 // or in this case an "anonymous function"
 sphereSliderRadius.addEventListener('input', (event) => {
