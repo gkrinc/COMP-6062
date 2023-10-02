@@ -1,0 +1,1 @@
+const readMoreBtns = document.querySelectorAll('article button.read-more');
