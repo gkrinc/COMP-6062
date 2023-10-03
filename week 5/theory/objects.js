@@ -1,12 +1,19 @@
 // Creating an object called `spiderman`
 const spiderman = {
-  username: 'Spiderman',
+  name: 'Spiderman',
   email: 'spiderman@marvel.com'
 };
 
 const anotherSpiderman = {
-  username: 'Spiderman',
+  name: 'Spiderman',
   email: 'spiderman@marvel.com'
+};
+
+// Another object. Though it has the same signature, it
+// isn't related to the `spiderman` variable in any way
+const hulk = {
+  name: 'Hulk',
+  email: 'hulk@marvel.com'
 };
 
 // Even though they have the same properties and values
@@ -21,7 +28,7 @@ console.log('duplicateSpiderman === spiderman: ', duplicateSpiderman === spiderm
 
 // Not exactly a graceful way of checking equivalence. Think about an object with dozens of properties :s
 const arePropertiesEquivalent = spiderman.name === duplicateSpiderman.name && spiderman.email === duplicateSpiderman.email;
-console.log('spiderman ≡ duplicateSpiderman: ', arePropertiesEquivalent);
+console.log('spiderman ~ duplicateSpiderman: ', arePropertiesEquivalent);
 
 // This function will check all of the key/pairs in both objects
 // against each other to ensure one object doesn't have keys that
@@ -43,15 +50,28 @@ const objectsAreEquivalent = (objA, objB) => {
   return Boolean(equivalent);
 };
 
-const areEquivalent = objectsAreEquivalent(spiderman, duplicateSpiderman);
-console.log('spiderman ≡ duplicateSpiderman: ', areEquivalent);
+const areEquivalent = objectsAreEquivalent(spiderman, anotherSpiderman);
+console.log('spiderman ~ anotherSpiderman: ', areEquivalent);
 
-
-
-
-// Another object. Though it has the same signature, it
-// isn't related to the `spiderman` variable in any way
-const hulk = {
-  username: 'Hulk',
-  email: 'hulk@marvel.com'
+// Object can be extended at any time just by adding the new property and setting a value
+spiderman.firstAppearance = {
+  comic: 'Amazing Fantasy',
+  volume: 15
 };
+
+// We can see that the original properties: name and email are still there,
+// but we now also see the new `firstAppearance` property
+console.log({spiderman});
+
+// Object can get very nested as well, but we can't set a nested property until
+// it's parent has been defined. By trying to set the value `total` on the property
+// `issues` which has yet to be set, we'll get this error in the console:
+// objects.js:68 Uncaught TypeError: Cannot set properties of undefined (setting 'total')
+// spiderman.issues.total = 2132;
+
+// Object properties can also be functions
+spiderman.sayCatchprase = () => {
+  console.log(' Whatever life holds in store for me, I will never forget these words: "With great power comes great responsibility." This is my gift, my curse. Who am I? I\'m Spider-man');
+};
+
+spiderman.sayCatchprase();

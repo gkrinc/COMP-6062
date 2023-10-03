@@ -5,25 +5,19 @@
   </head>
   <body>
     <form action="" method="POST">
-      <fieldset>
-        <div>
-          <input type="radio" id="option-1" name="options" value="1" />
-          <label for="option-1">Option 1</label>
-        </div>
-        <div>
-          <input type="radio" id="option-2" name="options" value="2" />
-          <label for="option-2">Option 2</label>
-        </div>
+      <fieldset class="mb-12">
+        <select id="special-select" name="special-select">
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3</option>
+          <option value="4">Option 4</option>
+        </select>
         <div class="d-none option-2-special">
           <input type="checkbox" id="option-2-special" name="option-2-special" />
           <label for="option-2-special">Some special thing</label>
         </div>
-        <div>
-          <input type="radio" id="option-3" name="options" value="3" />
-          <label for="option-3">Option 3</label>
-        </div>
       </fieldset>
-      <fieldset>
+      <fieldset class="mb-12">
         <label for="textbox">Looking for `Enter` key</label>
         <input type="text" id="textbox" name="textbox" />
       </fieldset>
