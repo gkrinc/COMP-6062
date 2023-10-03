@@ -1,3 +1,4 @@
+// Named function. The function is assigned to the constant `report` and therefore has a name
 const report = (c) => {
   console.log(c);
 }

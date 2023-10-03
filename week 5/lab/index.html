@@ -4,11 +4,30 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <article>
-      <p class="summary">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore...</p>
-      <p class="d-none">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      <button class="read-more">Read more</button>
-    </article>
+    <form action="" method="POST">
+      <fieldset>
+        <div>
+          <input type="radio" id="option-1" name="options" value="1" />
+          <label for="option-1">Option 1</label>
+        </div>
+        <div>
+          <input type="radio" id="option-2" name="options" value="2" />
+          <label for="option-2">Option 2</label>
+        </div>
+        <div class="d-none option-2-special">
+          <input type="checkbox" id="option-2-special" name="option-2-special" />
+          <label for="option-2-special">Some special thing</label>
+        </div>
+        <div>
+          <input type="radio" id="option-3" name="options" value="3" />
+          <label for="option-3">Option 3</label>
+        </div>
+      </fieldset>
+      <fieldset>
+        <label for="textbox">Looking for `Enter` key</label>
+        <input type="text" id="textbox" name="textbox" />
+      </fieldset>
+    </form>
     <script src="script.js"></script>
   </body>
 </html>
