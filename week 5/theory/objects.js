@@ -1,19 +1,19 @@
 // Creating an object called `spiderman`
 const spiderman = {
   name: 'Spiderman',
-  email: 'spiderman@marvel.com'
+  email: 'spiderman@marvel.com',
 };
 
 const anotherSpiderman = {
   name: 'Spiderman',
-  email: 'spiderman@marvel.com'
+  email: 'spiderman@marvel.com',
 };
 
 // Another object. Though it has the same signature, it
-// isn't related to the `spiderman` variable in any way
+// isn't related to the `spiderman` variables in any way
 const hulk = {
   name: 'Hulk',
-  email: 'hulk@marvel.com'
+  email: 'hulk@marvel.com',
 };
 
 // Even though they have the same properties and values
