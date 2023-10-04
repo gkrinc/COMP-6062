@@ -123,3 +123,33 @@ console.log('Only Pearl Jam songs: ', songs.filter((song) => song.artist === 'Pe
 
 
 // ----------------------------------------------------------------
+
+
+// Function chaining
+// Array.filter returns an array for we can call additional Array methods afterwards by
+// using the dot (.) operator
+const onlyPearlJamSongTitles = songs.filter((song) => song.artist === 'Pearl Jam').map((song) => song.title);
+console.log('Only Pearl Jam Song Titles: ', onlyPearlJamSongTitles);
+
+
+// ----------------------------------------------------------------
+
+
+// Sometimes our data can get a little messy and end up with missing/incomplete info, in this
+// case a missing year. If we try to call a method of song.year it will throw an error
+// because year would be null and therefore the function we're calling wouldn't exist
+//
+// We can use the `Optional chaining` operator (?.) to prevent the errors...with this operator
+// the function will only get called if the propety is not null/undefined
+//
+// We can also use the `Nullish Coalescence` operator (??) to provide a default value if the
+// value preceeding it is null or undefined
+songs.push({
+  title: 'Superunknown',
+  artist: 'Soundgarden',
+});
+songs.forEach((song) => console.log('Song year: ', song.year?.toString() ?? 'Unknown'));
+
+// The ternary operator is like an inline if/else
+// expression ? truthy : falsey
+songs.forEach((song) => console.log('Song year: ', song.year ? song.year : 'Unknown'));
