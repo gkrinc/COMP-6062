@@ -1,7 +1,3 @@
-import Song from './Song';
-
-const areaOfACircle = (radius) => Math.PI * Number(radius) ** 2;
-
 const holiday = {
   title: 'Holiday',
   artist: 'Green Day',
@@ -9,19 +5,14 @@ const holiday = {
 };
 
 const App = () => {
+  // In a JSX file the return value must be wrapped in round brackets
   return (
     <div>
-    <form action="" method="post">
-      <label htmlFor="radius">Radius: </label>
-      <input id="radius" name="radius" type="number" onInput={(event) => {
-        const area = areaOfACircle(event.target.value);
-        console.log(area.toFixed(2));
-      }} />
-      <span>Area: </span>
-    </form>
-    <Song title={holiday.title} artist={holiday.artist} year={holiday.year} />
+      <p><span>Title: </span>{holiday.title}</p>
+      <p><span>Artist: </span>{holiday.artist}</p>
+      <p><span>Year: </span>{holiday.year}</p>
     </div>
-  )
+  );
 }
 
 export default App;
