@@ -35,6 +35,17 @@ function App() {
     setTodos(updatedTodos);
   };
 
+  const addTodo = () => {
+    const newTodo = {
+      done: false,
+      note: todoNote,
+      id: `todo-${randomInt(1000, 9999)}`,
+    };
+    const newTodos = [...todos, newTodo];
+    setTodos(newTodos);
+    setTodoNote('');
+  };
+
   return (
     <>
       <header>
@@ -48,17 +59,15 @@ function App() {
             onChange={(event) => {
               setTodoNote(event.target.value);
             }}
+            onKeyUp={(event) => {
+              if (event.key.toLowerCase() === 'enter') {
+                addTodo();
+              }
+            }}
             value={todoNote}
           />
           <button onClick={() => {
-            const newTodo = {
-              done: false,
-              note: todoNote,
-              id: `todo-${randomInt(1000, 9999)}`,
-            };
-            const newTodos = [...todos, newTodo];
-            setTodos(newTodos);
-            setTodoNote('');
+            addTodo();
           }}>Add</button>
         </div>
         {todos.map((todo) => (
