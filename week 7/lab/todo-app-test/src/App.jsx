@@ -1,13 +1,12 @@
-import { useState } from 'react'
-import ToDo from './ToDo'
-import './App.css'
+import { useState } from 'react';
+import ToDo from './ToDo';
+import './App.css';
 
 const randomInt = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1) + min);
 };
 
 function App() {
-
   const [todoNote, setTodoNote] = useState('');
   const [todos, setTodos] = useState([{
     done: false,
@@ -20,6 +19,16 @@ function App() {
   }]);
 
   const todoCheckedChange = (todoId) => {
+    /* Wrong way
+    todos.forEach((todo) => {
+      if (todo.id === todoId) {
+        todo.done = !todo.done;
+      }
+    });
+
+    setTodos(todos);*/
+
+    /* Right way */
     const updatedTodos = [];
     todos.forEach((todo) => {
       if (todo.id === todoId) {
@@ -31,7 +40,8 @@ function App() {
         updatedTodos.push(todo);
       }
     });
-    console.log(updatedTodos);
+
+    
     setTodos(updatedTodos);
   };
 
@@ -58,11 +68,6 @@ function App() {
             placeholder="New todo note"
             onChange={(event) => {
               setTodoNote(event.target.value);
-            }}
-            onKeyUp={(event) => {
-              if (event.key.toLowerCase() === 'enter') {
-                addTodo();
-              }
             }}
             value={todoNote}
           />
