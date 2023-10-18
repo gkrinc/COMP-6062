@@ -62,12 +62,24 @@ function App() {
         <h1>TODO App</h1>
       </header>
       <section>
+        {todos.every((todo) => todo.done) && (
+          <div className="done">
+            <span className="celebrate">🎉</span>
+            <span className="message">All done</span>
+            <span className="celebrate">🎉</span>
+          </div>
+        )}
         <div>
           <input
             type="text"
             placeholder="New todo note"
             onChange={(event) => {
               setTodoNote(event.target.value);
+            }}
+            onKeyUp={(event) => {
+              if (event.key.toLowerCase() === 'enter') {
+                addTodo();
+              }
             }}
             value={todoNote}
           />

@@ -42,5 +42,23 @@
 }
 
 .todo input {
-  margin-right: 4px;
+  margin-right: 8px;
+}
+
+.done {
+  font-size: 24px;
+  padding: 4px 0;
+}
+
+.done .message {
+  margin: 0 8px;
+}
+
+.celebrate {
+  animation: blinker 1s ease-in-out infinite;
+}
+
+@keyframes blinker {
+  from { opacity: 1.0; }
+  to { opacity: 0.0; }
 }
