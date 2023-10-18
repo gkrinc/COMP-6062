@@ -1,8 +1,8 @@
-const ToDo = (props) => {
+const ToDo = ({id, done, note, changed}) => {
   return (
     <div className="todo">
-      <input type="checkbox" checked={props.done} id={props.id} />
-      <label htmlFor={props.id}>{props.note}</label>
+      <input type="checkbox" checked={done} id={id} onChange={() => changed(id)} />
+      <label htmlFor={id}>{note}</label>
     </div>
   );
 };
