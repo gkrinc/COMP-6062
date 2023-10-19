@@ -19,16 +19,6 @@ function App() {
   }]);
 
   const todoCheckedChange = (todoId) => {
-    /* Wrong way
-    todos.forEach((todo) => {
-      if (todo.id === todoId) {
-        todo.done = !todo.done;
-      }
-    });
-
-    setTodos(todos);*/
-
-    /* Right way */
     const updatedTodos = [];
     todos.forEach((todo) => {
       if (todo.id === todoId) {
