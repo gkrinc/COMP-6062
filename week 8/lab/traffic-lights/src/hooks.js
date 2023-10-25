@@ -8,6 +8,7 @@ export const useInterval = (callback, delay) => {
   // Remember the latest callback.
   useEffect(() => {
     savedCallback.current = callback;
+    // This effect gets called any time the `callback` param changes
   }, [callback]);
 
   // Set up the interval.
@@ -16,7 +17,10 @@ export const useInterval = (callback, delay) => {
       savedCallback.current();
     }
     if (delay !== null) {
-      let id = setInterval(tick, delay);
+      const id = setInterval(tick, delay);
+      // The return of a useEffect gets called any time
+      // the component it's used on is unmounted.
+      // Great for cleanup!
       return () => {
         clearInterval(id);
       }
