@@ -73,7 +73,7 @@ function App() {
         <h1>Student Name</h1>
       </header>
       <div>
-        {pressure && (
+        {pressure != null && (
           <input
             type="range"
             min={0}
