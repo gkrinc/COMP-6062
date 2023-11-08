@@ -1,4 +1,4 @@
-const http = require('http');
+const http = require('http'); // CommonJS module import
 
 const hostname = '127.0.0.1';
 const port = 5050;
