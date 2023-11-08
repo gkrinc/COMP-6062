@@ -15,6 +15,13 @@ const server = http.createServer((req, res) => {
         res.setHeader('Content-Type', 'application/json');
         return res.end(body);
       });
+    } else if (req.method === 'GET') {
+      res.statusCode = 200;
+      res.setHeader('Content-Type', 'text/plain');
+      res.write('Hello');
+      res.write(' ');
+      res.write('World');
+      return res.end();
     }
   } else if (req.url === '/status') {
     res.statusCode(200);
