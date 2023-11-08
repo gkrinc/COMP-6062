@@ -22,13 +22,16 @@ app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 
+app.get('/status', (req, res) => {
+  res.send('Healthy!');
+});
+
 app.get('/api', (req, res) => {
-  res.send('API route');
+  res.send(`API route - ${req.method}`);
 });
 
 app.post('/api', (req, res) => {
-  console.log(req.body);
-  res.status(201).send('API route');
+  res.status(201).send(`API route - ${req.method}`);
 });
 
 app.listen(port, () => {
