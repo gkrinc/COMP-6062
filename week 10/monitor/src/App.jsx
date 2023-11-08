@@ -92,7 +92,7 @@ function App() {
             key={level.id}
             status={level.status}
             label={level.label}
-            active={pressure && pressure >= level.min && pressure <= level.max}
+            active={pressure != null && pressure >= level.min && pressure <= level.max}
           />
         ))}
       </div>
