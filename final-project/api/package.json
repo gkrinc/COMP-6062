@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js --ignore data.json",
+    "start-async": "nodemon server-async.js --ignore data.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
