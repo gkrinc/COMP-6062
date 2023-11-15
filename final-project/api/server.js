@@ -1,4 +1,5 @@
 const express = require('express');
+const fs = require('fs');
 const app = express();
 const port = 5001;
 
@@ -10,11 +11,20 @@ app.get('/', (req, res) => {
 });
 
 app.get('/api/volume', (req, res) => {
-  res.send('Volume: 10');
+  return fs.readFile('data.json', (err, data) => {
+    const json = JSON.parse(data);
+    res.send({ volume: json.volume });
+  });
 });
 
 app.put('/api/volume', (req, res) => {
-  res.send(`Volume: ${req.body.volume}`);
+  return fs.readFile('data.json', (err, data) => {
+    const json = JSON.parse(data);
+    json.volume = Number(req.body.volume);
+    fs.writeFile('data.json', JSON.stringify(json), null, () => {
+      res.send({ volume: Number(req.body.volume) });
+    });
+  });
 });
 
 app.listen(port, () => {

@@ -9,6 +9,8 @@ function App() {
       .then((response) => {
         console.log({response});
       });
+
+    console.log('Execution continuing...');
   }, []);
 
   return (
