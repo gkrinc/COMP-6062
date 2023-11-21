@@ -3,20 +3,6 @@ const fsp = require('fs').promises;
 const app = express();
 const port = 5001;
 
-/*
-const logError = (err, req, res, next) => {
-  console.error(err);
-  next(err);
-};
-
-const handleError = (err, req, res, next) => {
-  if (res.headersSent) {
-    return next(err);
-  }
-  res.status(500).send('An error occured');
-};
-*/
-
 // Middleware for parsing req bodies to JSON (req.body)
 app.use(express.json());
 
@@ -57,10 +43,21 @@ app.get('/api/songs/:id', (req, res) => {
   res.send(req.params.id);
 });
 
-/*
+const logError = (err, req, res, next) => {
+  console.error(err);
+  next(err);
+};
+
+const handleError = (err, req, res, next) => {
+  if (res.headersSent) {
+    return next(err);
+  }
+  res.status(500).send('An error occured');
+};
+
+// Error handling middleware
 app.use(logError);
 app.use(handleError);
-*/
 
 app.listen(port, () => {
   console.log(`Final project API listening on port ${port}`);
